@@ -228,5 +228,5 @@ window.customCards.push({
     type: "pronote-averages-card",
     name: "Pronote Averages Card",
     description: "Display the averages from Pronote",
-    documentationURL: "https://github.com/delphiki/lovelace-pronote?tab=readme-ov-file#averages",
+    documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#averages",
 });

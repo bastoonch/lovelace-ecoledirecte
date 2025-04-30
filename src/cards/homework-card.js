@@ -258,5 +258,5 @@ window.customCards.push({
     type: "pronote-homework-card",
     name: "Pronote Homework Card",
     description: "Display the homework from Pronote",
-    documentationURL: "https://github.com/delphiki/lovelace-pronote?tab=readme-ov-file#homework",
+    documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#homework",
 });

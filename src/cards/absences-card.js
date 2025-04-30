@@ -185,5 +185,5 @@ window.customCards.push({
     type: "pronote-absences-card",
     name: "Pronote Absences Card",
     description: "Display the absences from Pronote",
-    documentationURL: "https://github.com/delphiki/lovelace-pronote?tab=readme-ov-file#absences",
+    documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#absences",
 });

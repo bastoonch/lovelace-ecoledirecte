@@ -368,5 +368,5 @@ window.customCards.push({
     type: "pronote-timetable-card",
     name: "Pronote Timetable Card",
     description: "Display the timetable from Pronote",
-    documentationURL: "https://github.com/delphiki/lovelace-pronote?tab=readme-ov-file#timetable",
+    documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#timetable",
 });

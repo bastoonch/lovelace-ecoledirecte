@@ -6,7 +6,7 @@ A few cards to help display informations from the [Pronote integration for Home 
 
 ### Using HACS
 
-Add this repository to HACS : https://github.com/delphiki/lovelace-pronote.git
+Add this repository to HACS : https://github.com/bastoonch/lovelace-ecoledirecte.git
 then:  
 HACS > Lovelace > **Pronote Cards**
 

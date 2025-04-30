@@ -222,5 +222,5 @@ window.customCards.push({
     type: "pronote-delays-card",
     name: "Pronote Delays Card",
     description: "Display the delays from Pronote",
-    documentationURL: "https://github.com/delphiki/lovelace-pronote?tab=readme-ov-file#delays",
+    documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#delays",
 });

@@ -300,5 +300,5 @@ window.customCards.push({
     type: "pronote-evaluations-card",
     name: "Pronote Evaluations Card",
     description: "Display the evaluations from Pronote",
-    documentationURL: "https://github.com/delphiki/lovelace-pronote?tab=readme-ov-file#evaluations",
+    documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#evaluations",
 });
