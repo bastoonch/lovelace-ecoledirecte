@@ -40,7 +40,7 @@ const plugins = [
 
 export default [
   {
-    input: 'src/pronote.ts',
+    input: 'src/ecoledirecte.ts',
     output: {
       dir: './dist',
       format: 'es',
