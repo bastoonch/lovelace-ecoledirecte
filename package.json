@@ -2,11 +2,11 @@
   "name": "lovelace-pronote",
   "version": "1.0.1",
   "description": "Lovelace cards for Pronote",
-  "main": "dist/pronote.js",
+  "main": "dist/ecoledirecte.js",
   "scripts": {
     "build": "npm run lint && npm run rollup",
     "rollup": "rollup -c",
-    "babel": "babel dist/pronote.js --out-file dist/pronote.js",
+    "babel": "babel dist/ecoledirecte.js --out-file dist/ecoledirecte.js",
     "lint": "eslint src/*.ts",
     "watch": "rollup -c --watch",
     "postversion": "npm run build",
@@ -14,20 +14,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/delphiki/lovelace-pronote.git"
+    "url": "git+https://github.com/bastoonch/lovelace-ecoledirecte.git"
   },
   "keywords": [
     "lovelace"
   ],
   "author": "delphiki",
   "contributors": [
-    "delphiki (https://github.com/delphiki)"
+    "delphiki (https://github.com/bastoonch)"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/delphiki/lovelace-pronote/issues"
+    "url": "https://github.com/bastoonch/lovelace-ecoledirecte/issues"
   },
-  "homepage": "https://github.com/delphiki/lovelace-pronote#readme",
+  "homepage": "https://github.com/bastoonch/lovelace-ecoledirecte#readme",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
