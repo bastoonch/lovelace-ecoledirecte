@@ -1,6 +1,6 @@
 {
   "name": "lovelace-ecoledirecte",
-  "version": "1.0.1",
+  "version": "1.13.0",
   "description": "Lovelace cards for Pronote",
   "main": "dist/ecoledirecte.js",
   "scripts": {
@@ -19,9 +19,9 @@
   "keywords": [
     "lovelace"
   ],
-  "author": "delphiki",
+  "author": "bastoonch",
   "contributors": [
-    "delphiki (https://github.com/bastoonch)"
+    "bastoonch (https://github.com/bastoonch)"
   ],
   "license": "MIT",
   "bugs": {
