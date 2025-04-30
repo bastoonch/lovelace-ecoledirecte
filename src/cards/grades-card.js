@@ -264,3 +264,4 @@ window.customCards.push({
     description: "Display the grades from Pronote",
     documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#grades",
 });
+
