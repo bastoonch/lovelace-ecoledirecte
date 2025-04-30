@@ -18,7 +18,7 @@ HACS > Lovelace > **EcoleDirecte Cards**
   
 ```yaml
 type: custom:ecoledirecte-timetable-card
-entity: sensor.pronote_XXXX_YYYY_timetable_next_day
+entity: sensor.ecoledirecte_XXXX_YYYY_timetable_next_day
 display_header: true
 display_lunch_break: true
 display_classroom: true
@@ -37,7 +37,7 @@ This card can be used with all timetable sensors.
   
 ```yaml
 type: custom:ecoledirecte-homework-card
-entity: sensor.pronote_XXXX_YYYY_homework
+entity: sensor.ecoledirecte_XXXX_YYYY_homework
 display_header: true
 display_done_homework: true
 reduce_done_homework: true
@@ -52,7 +52,7 @@ This card can be used with all homework sensors.
   
 ```yaml
 type: custom:ecoledirecte-grades-card
-entity: sensor.pronote_XXXX_YYYY_grades
+entity: sensor.ecoledirecte_XXXX_YYYY_grades
 grade_format: full # 'full' will display grade as "X/Y", 'short' will display "X"
 display_header: true
 display_date: true
@@ -73,7 +73,7 @@ max_grades: null
   
 ```yaml
 type: custom:ecoledirecte-averages-card
-entity: sensor.pronote_XXXX_YYYY_averages
+entity: sensor.ecoledirecte_XXXX_YYYY_averages
 average_format: full # 'full' will display grade as "X/Y", 'short' will display "X"
 display_header: true
 compare_with_class_average: true
@@ -89,7 +89,7 @@ display_class_max: true
   
 ```yaml
 type: custom:ecoledirecte-evaluations-card
-entity: sensor.pronote_XXXX_YYYY_evaluations
+entity: sensor.ecoledirecte_XXXX_YYYY_evaluations
 display_header: true
 display_description: true
 display_teacher: true
@@ -106,7 +106,7 @@ child_name: null
   
 ```yaml
 type: custom:ecoledirecte-absences-card
-entity: sensor.pronote_XXXX_YYYY_absences
+entity: sensor.ecoledirecte_XXXX_YYYY_absences
 display_header: true
 max_absences: null
 child_name: null
@@ -118,7 +118,7 @@ child_name: null
   
 ```yaml
 type: custom:ecoledirecte-delays-card
-entity: sensor.pronote_XXXX_YYYY_delays
+entity: sensor.ecoledirecte_XXXX_YYYY_delays
 display_header: true
 max_delays: null
 child_name: null
