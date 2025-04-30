@@ -21,15 +21,16 @@ HACS > Lovelace > **EcoleDirecte Cards**
 ![Grades card example](/doc/images/grades-card.png "Grades card example").
   
 ```yaml
+
 type: custom:ecoledirecte-grades-card
-entity: sensor.ecoledirecte_XXXX_YYYY_grades
-grade_format: full # 'full' will display grade as "X/Y", 'short' will display "X"
-display_header: true
+entity: sensor.ecole_directe_XXX_YYY_grades
+grade_format: full
+display_header: false
 display_date: true
 display_comment: true
 display_class_average: true
 compare_with_class_average: true
-compare_with_ratio: null # use a float number, e.g. '0.6' to compare with the grade / out_of ratio
+compare_with_ratio: null
 display_coefficient: true
 display_class_min: true
 display_class_max: true
