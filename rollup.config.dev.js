@@ -10,7 +10,7 @@ import { ignoreSelectFiles } from './elements/ignore/select';
 import { ignoreSwitchFiles } from './elements/ignore/switch';
 
 export default {
-  input: ['src/pronote.ts'],
+  input: ['src/ecoledirecte.ts'],
   output: {
     dir: './dist',
     format: 'es',
