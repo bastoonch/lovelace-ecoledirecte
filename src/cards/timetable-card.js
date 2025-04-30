@@ -11,7 +11,7 @@ Date.prototype.getWeekNumber = function () {
     return Math.ceil((((d - new Date(d.getFullYear(), 0, 1)) / 8.64e7) + 1) / 7);
 };
 
-class PronoteTimetableCard extends LitElement {
+class EcoleDirecteTimetableCard extends LitElement {
 
     lunchBreakRendered = false;
 
@@ -26,7 +26,7 @@ class PronoteTimetableCard extends LitElement {
         let child_sensor = this.config.entity.split('_timetable')[0];
         let child_attributes = this.hass.states[child_sensor].attributes;
         let child_name = (typeof child_attributes['nickname'] === 'string' && child_attributes['nickname'] !== '') ? child_attributes['nickname'] : child_attributes['full_name'];
-        return html`<div class="pronote-card-header">Emploi du temps de ${child_name}</div>`;
+        return html`<div class="ecoledirecte-card-header">Emploi du temps de ${child_name}</div>`;
     }
 
     getBreakRow(label, ended) {
@@ -88,17 +88,17 @@ class PronoteTimetableCard extends LitElement {
     }
 
     getDayHeader(firstLesson, dayStartAt, dayEndAt, daysCount) {
-        return html`<div class="pronote-timetable-header">
+        return html`<div class="ecoledirecte-timetable-header">
             ${this.config.enable_slider ? html`<span
-                class="pronote-timetable-header-arrow-left ${daysCount === 0 ? 'disabled' : ''}"
+                class="ecoledirecte-timetable-header-arrow-left ${daysCount === 0 ? 'disabled' : ''}"
                 @click=${(e) => this.changeDay('previous', e)}
             >←</span>` : '' }
-            <span class="pronote-timetable-header-date">${this.getFormattedDate(firstLesson)}</span>
-            ${this.config.display_day_hours && dayStartAt && dayEndAt ? html`<span class="pronote-timetable-header-hours">
+            <span class="ecoledirecte-timetable-header-date">${this.getFormattedDate(firstLesson)}</span>
+            ${this.config.display_day_hours && dayStartAt && dayEndAt ? html`<span class="ecoledirecte-timetable-header-hours">
                 ${this.getFormattedTime(dayStartAt)} - ${this.getFormattedTime(dayEndAt)}
             </span>` : '' }
             ${this.config.enable_slider ? html`<span
-                class="pronote-timetable-header-arrow-right"
+                class="ecoledirecte-timetable-header-arrow-right"
                 @click=${(e) => this.changeDay('next', e)}
             >→</span>` : '' }
         </div>`;
@@ -111,8 +111,8 @@ class PronoteTimetableCard extends LitElement {
         }
 
         const activeDay = e.target.parentElement.parentElement;
-        let hasPreviousDay = activeDay.previousElementSibling && activeDay.previousElementSibling.classList.contains('pronote-timetable-day-wrapper');
-        let hasNextDay = activeDay.nextElementSibling && activeDay.nextElementSibling.classList.contains('pronote-timetable-day-wrapper');
+        let hasPreviousDay = activeDay.previousElementSibling && activeDay.previousElementSibling.classList.contains('ecoledirecte-timetable-day-wrapper');
+        let hasNextDay = activeDay.nextElementSibling && activeDay.nextElementSibling.classList.contains('ecoledirecte-timetable-day-wrapper');
         let newActiveDay = null;
 
         if (direction === 'previous' && hasPreviousDay) {
@@ -125,15 +125,15 @@ class PronoteTimetableCard extends LitElement {
             activeDay.classList.remove('active');
             newActiveDay.classList.add('active');
 
-            hasPreviousDay = newActiveDay.previousElementSibling && newActiveDay.previousElementSibling.classList.contains('pronote-timetable-day-wrapper');
-            hasNextDay = newActiveDay.nextElementSibling && newActiveDay.nextElementSibling.classList.contains('pronote-timetable-day-wrapper');
+            hasPreviousDay = newActiveDay.previousElementSibling && newActiveDay.previousElementSibling.classList.contains('ecoledirecte-timetable-day-wrapper');
+            hasNextDay = newActiveDay.nextElementSibling && newActiveDay.nextElementSibling.classList.contains('ecoledirecte-timetable-day-wrapper');
 
             if (!hasPreviousDay) {
-                newActiveDay.querySelector('.pronote-timetable-header-arrow-left').classList.add('disabled');
+                newActiveDay.querySelector('.ecoledirecte-timetable-header-arrow-left').classList.add('disabled');
             }
 
             if (!hasNextDay) {
-                newActiveDay.querySelector('.pronote-timetable-header-arrow-right').classList.add('disabled');
+                newActiveDay.querySelector('.ecoledirecte-timetable-header-arrow-right').classList.add('disabled');
             }
         }
     }
@@ -187,7 +187,7 @@ class PronoteTimetableCard extends LitElement {
                 // checking if next lesson is on another day
                 if (index + 1 >= lessons.length || ((index + 1) < lessons.length && currentFormattedDate !== this.getFormattedDate(lessons[index+1]))) {
                     itemTemplates.push(html`
-                        <div class="${this.config.enable_slider ? 'slider-enabled' : ''} pronote-timetable-day-wrapper ${daysCount === 0 ? 'active' : ''}">
+                        <div class="${this.config.enable_slider ? 'slider-enabled' : ''} ecoledirecte-timetable-day-wrapper ${daysCount === 0 ? 'active' : ''}">
                             ${this.getDayHeader(lesson, dayStartAt, dayEndAt, daysCount)}
                             <table>${dayTemplates}</table>
                         </div>
@@ -218,7 +218,7 @@ class PronoteTimetableCard extends LitElement {
             }
 
             return html`
-                <ha-card id="${this.config.entity}-card" class="${this.config.enable_slider ? 'pronote-timetable-card-slider' : ''}">
+                <ha-card id="${this.config.entity}-card" class="${this.config.enable_slider ? 'ecoledirecte-timetable-card-slider' : ''}">
                     ${this.config.display_header ? this.getCardHeader() : ''}
                     ${itemTemplates}
                 </ha-card>`
@@ -253,27 +253,27 @@ class PronoteTimetableCard extends LitElement {
 
     static get styles() {
         return css`
-        .pronote-timetable-card-slider .pronote-timetable-day-wrapper {
+        .ecoledirecte-timetable-card-slider .ecoledirecte-timetable-day-wrapper {
             display: none;
         }
-        .pronote-timetable-card-slider .pronote-timetable-day-wrapper.active {
+        .ecoledirecte-timetable-card-slider .ecoledirecte-timetable-day-wrapper.active {
             display: block;
         }
-        .pronote-timetable-card-slider .pronote-timetable-header-date {
+        .ecoledirecte-timetable-card-slider .ecoledirecte-timetable-header-date {
             display: inline-block;
             text-align: center;
             width: 120px;
         }
-        .pronote-timetable-header-arrow-left,
-        .pronote-timetable-header-arrow-right {
+        .ecoledirecte-timetable-header-arrow-left,
+        .ecoledirecte-timetable-header-arrow-right {
             cursor: pointer;
         }
-        .pronote-timetable-header-arrow-left.disabled,
-        .pronote-timetable-header-arrow-right.disabled {
+        .ecoledirecte-timetable-header-arrow-left.disabled,
+        .ecoledirecte-timetable-header-arrow-right.disabled {
             opacity: 0.3;
             pointer-events: none;
         }
-        .pronote-card-header {
+        .ecoledirecte-card-header {
             text-align:center;
         }
         div {
@@ -281,7 +281,7 @@ class PronoteTimetableCard extends LitElement {
             font-weight:bold;
             font-size:1em;
         }
-        span.pronote-timetable-header-hours {
+        span.ecoledirecte-timetable-header-hours {
             float:right;
         }
         table{
@@ -335,7 +335,7 @@ class PronoteTimetableCard extends LitElement {
         .lesson-ended {
             opacity: 0.3;
         }
-        div:not(.slider-enabled).pronote-timetable-day-wrapper + div:not(.slider-enabled).pronote-timetable-day-wrapper {
+        div:not(.slider-enabled).ecoledirecte-timetable-day-wrapper + div:not(.slider-enabled).ecoledirecte-timetable-day-wrapper {
             border-top: 1px solid white;
         }
         `;
@@ -357,16 +357,16 @@ class PronoteTimetableCard extends LitElement {
     }
 
     static getConfigElement() {
-        return document.createElement("pronote-timetable-card-editor");
+        return document.createElement("ecoledirecte-timetable-card-editor");
     }
 }
 
-customElements.define("pronote-timetable-card", PronoteTimetableCard);
+customElements.define("ecoledirecte-timetable-card", EcoleDirecteTimetableCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-    type: "pronote-timetable-card",
-    name: "Pronote Timetable Card",
-    description: "Display the timetable from Pronote",
+    type: "ecoledirecte-timetable-card",
+    name: "EcoleDirecte Timetable Card",
+    description: "Display the timetable from EcoleDirecte",
     documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#timetable",
 });

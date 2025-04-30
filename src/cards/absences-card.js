@@ -4,7 +4,7 @@ const LitElement = Object.getPrototypeOf(
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-class PronoteAbsencesCard extends LitElement {
+class EcoleDirecteAbsencesCard extends LitElement {
 
     static get properties() {
         return {
@@ -18,7 +18,7 @@ class PronoteAbsencesCard extends LitElement {
         let child_attributes = this.hass.states[child_sensor].attributes;
         let child_name = (typeof child_attributes['nickname'] === 'string' && child_attributes['nickname'].length > 0) ? child_attributes['nickname'] : child_attributes['full_name'];
         child_name = (this.config.child_name !== null) ? this.config.child_name : child_name;
-        return html`<div class="pronote-card-header">Absences de ${child_name}</div>`;
+        return html`<div class="ecoledirecte-card-header">Absences de ${child_name}</div>`;
     }
 
     getAbsencesRow(absence) {
@@ -100,7 +100,7 @@ class PronoteAbsencesCard extends LitElement {
 
     static get styles() {
         return css`
-        .pronote-card-header {
+        .ecoledirecte-card-header {
             text-align:center;
         }
         div {
@@ -174,16 +174,16 @@ class PronoteAbsencesCard extends LitElement {
     }
 
     static getConfigElement() {
-        return document.createElement("pronote-absences-card-editor");
+        return document.createElement("ecoledirecte-absences-card-editor");
     }
 }
 
-customElements.define("pronote-absences-card", PronoteAbsencesCard);
+customElements.define("ecoledirecte-absences-card", EcoleDirecteAbsencesCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-    type: "pronote-absences-card",
-    name: "Pronote Absences Card",
-    description: "Display the absences from Pronote",
+    type: "ecoledirecte-absences-card",
+    name: "EcoleDirecte Absences Card",
+    description: "Display the absences from EcoleDirecte",
     documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#absences",
 });

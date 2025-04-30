@@ -4,7 +4,7 @@ const LitElement = Object.getPrototypeOf(
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-class PronoteEvaluationsCard extends LitElement {
+class EcoleDirecteEvaluationsCard extends LitElement {
 
     static get properties() {
         return {
@@ -25,7 +25,7 @@ class PronoteEvaluationsCard extends LitElement {
         let child_attributes = this.hass.states[child_sensor].attributes;
         let child_name = (typeof child_attributes['nickname'] === 'string' && child_attributes['nickname'].length > 0) ? child_attributes['nickname'] : child_attributes['full_name'];
         child_name = (this.config.child_name !== null) ? this.config.child_name : child_name;
-        return html`<div class="pronote-card-header">Evaluations de ${child_name}</div>`;
+        return html`<div class="ecoledirecte-card-header">Evaluations de ${child_name}</div>`;
     }
 
     getAcquisitionRow(acquisition) {
@@ -154,7 +154,7 @@ class PronoteEvaluationsCard extends LitElement {
 
     static get styles() {
         return css`
-        .pronote-card-header {
+        .ecoledirecte-card-header {
             text-align:center;
         }
         div {
@@ -289,16 +289,16 @@ class PronoteEvaluationsCard extends LitElement {
     }
 
     static getConfigElement() {
-        return document.createElement("pronote-evaluations-card-editor");
+        return document.createElement("ecoledirecte-evaluations-card-editor");
     }
 }
 
-customElements.define("pronote-evaluations-card", PronoteEvaluationsCard);
+customElements.define("ecoledirecte-evaluations-card", EcoleDirecteEvaluationsCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-    type: "pronote-evaluations-card",
-    name: "Pronote Evaluations Card",
-    description: "Display the evaluations from Pronote",
+    type: "ecoledirecte-evaluations-card",
+    name: "EcoleDirecte Evaluations Card",
+    description: "Display the evaluations from EcoleDirecte",
     documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#evaluations",
 });

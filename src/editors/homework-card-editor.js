@@ -1,4 +1,4 @@
-import BasePronoteCardEditor from "./base-editor";
+import BaseEcoleDirecteCardEditor from "./base-editor";
 
 const LitElement = Object.getPrototypeOf(
     customElements.get("ha-panel-lovelace")
@@ -6,7 +6,7 @@ const LitElement = Object.getPrototypeOf(
 
 const html = LitElement.prototype.html;
 
-class PronoteHomeworkCardEditor extends BasePronoteCardEditor {
+class EcoleDirecteHomeworkCardEditor extends BaseEcoleDirecteCardEditor {
     render() {
         if (!this.hass || !this._config) {
             return html``;
@@ -22,4 +22,4 @@ class PronoteHomeworkCardEditor extends BasePronoteCardEditor {
     }
 }
 
-customElements.define("pronote-homework-card-editor", PronoteHomeworkCardEditor);
+customElements.define("ecoledirecte-homework-card-editor", EcoleDirecteHomeworkCardEditor);

@@ -4,7 +4,7 @@ const LitElement = Object.getPrototypeOf(
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-class PronoteGradesCard extends LitElement {
+class EcoleDirecteGradesCard extends LitElement {
 
     static get properties() {
         return {
@@ -24,7 +24,7 @@ class PronoteGradesCard extends LitElement {
         let child_sensor = this.config.entity.split('_grades')[0];
         let child_attributes = this.hass.states[child_sensor].attributes;
         let child_name = (typeof child_attributes['nickname'] === 'string' && child_attributes['nickname'].length > 0) ? child_attributes['nickname'] : child_attributes['full_name'];
-        return html`<div class="pronote-card-header">Notes de ${child_name}</div>`;
+        return html`<div class="ecoledirecte-card-header">Notes de ${child_name}</div>`;
     }
 
     getGradeRow(gradeData) {
@@ -141,7 +141,7 @@ class PronoteGradesCard extends LitElement {
 
     static get styles() {
         return css`
-        .pronote-card-header {
+        .ecoledirecte-card-header {
             text-align:center;
         }
         div {
@@ -251,16 +251,16 @@ class PronoteGradesCard extends LitElement {
     }
 
     static getConfigElement() {
-        return document.createElement("pronote-grades-card-editor");
+        return document.createElement("ecoledirecte-grades-card-editor");
     }
 }
 
-customElements.define("pronote-grades-card", PronoteGradesCard);
+customElements.define("ecoledirecte-grades-card", EcoleDirecteGradesCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-    type: "pronote-grades-card",
-    name: "Pronote Grades Card",
-    description: "Display the grades from Pronote",
+    type: "ecoledirecte-grades-card",
+    name: "EcoleDirecte Grades Card",
+    description: "Display the grades from EcoleDirecte",
     documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#grades",
 });

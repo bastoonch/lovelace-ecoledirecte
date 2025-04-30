@@ -4,7 +4,7 @@ const LitElement = Object.getPrototypeOf(
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-class BasePronoteCardEditor extends LitElement {
+class BaseEcoleDirecteCardEditor extends LitElement {
     static get properties() {
         return {
             hass: {},
@@ -143,4 +143,4 @@ class BasePronoteCardEditor extends LitElement {
     }
 }
 
-export default BasePronoteCardEditor;
+export default BaseEcoleDirecteCardEditor;

@@ -13,7 +13,7 @@ Date.prototype.getWeekNumber = function () {
     return Math.ceil((((d - new Date(d.getFullYear(), 0, 1)) / 8.64e7) + 1) / 7);
 };
 
-class PronoteHomeworkCard extends LitElement {
+class EcoleDirecteHomeworkCard extends LitElement {
 
     lunchBreakRendered = false;
 
@@ -28,7 +28,7 @@ class PronoteHomeworkCard extends LitElement {
         let child_sensor = this.config.entity.split('_homework')[0];
         let child_attributes = this.hass.states[child_sensor].attributes;
         let child_name = (typeof child_attributes['nickname'] === 'string' && child_attributes['nickname'] !== '') ? child_attributes['nickname'] : child_attributes['full_name'];
-        return html`<div class="pronote-card-header">Devoirs de ${child_name}</div>`;
+        return html`<div class="ecoledirecte-card-header">Devoirs de ${child_name}</div>`;
     }
 
     getFormattedDate(date) {
@@ -43,7 +43,7 @@ class PronoteHomeworkCard extends LitElement {
     }
 
     getDayHeader(homework) {
-        return html`<div class="pronote-homework-header">
+        return html`<div class="ecoledirecte-homework-header">
             <span>${this.getFormattedDate(homework.date)}</span>
         </div>`;
     }
@@ -160,7 +160,7 @@ class PronoteHomeworkCard extends LitElement {
 
     static get styles() {
         return css`
-        .pronote-card-header {
+        .ecoledirecte-card-header {
             text-align:center;
         }
         div {
@@ -174,7 +174,7 @@ class PronoteHomeworkCard extends LitElement {
             text-align: center;
             font-style: italic;
         }
-        .pronote-homework-header {
+        .ecoledirecte-homework-header {
             border-bottom: 2px solid grey;
         }
         table{
@@ -247,16 +247,16 @@ class PronoteHomeworkCard extends LitElement {
     }
 
     static getConfigElement() {
-        return document.createElement("pronote-homework-card-editor");
+        return document.createElement("ecoledirecte-homework-card-editor");
     }
 }
 
-customElements.define("pronote-homework-card", PronoteHomeworkCard);
+customElements.define("ecoledirecte-homework-card", EcoleDirecteHomeworkCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-    type: "pronote-homework-card",
-    name: "Pronote Homework Card",
-    description: "Display the homework from Pronote",
+    type: "ecoledirecte-homework-card",
+    name: "EcoleDirecte Homework Card",
+    description: "Display the homework from EcoleDirecte",
     documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#homework",
 });

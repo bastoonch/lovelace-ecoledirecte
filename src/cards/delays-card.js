@@ -4,7 +4,7 @@ const LitElement = Object.getPrototypeOf(
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-class PronoteDelaysCard extends LitElement {
+class EcoleDirecteDelaysCard extends LitElement {
     static get properties() {
         return {
             config: {},
@@ -25,7 +25,7 @@ class PronoteDelaysCard extends LitElement {
             ? this.config.child_name
             : childName;
 
-        return html`<div class="pronote-card-header">Retards de ${displayName}</div>`;
+        return html`<div class="ecoledirecte-card-header">Retards de ${displayName}</div>`;
     }
 
     // Génère une ligne pour un retard donné
@@ -136,7 +136,7 @@ class PronoteDelaysCard extends LitElement {
 
     static get styles() {
         return css`
-        .pronote-card-header {
+        .ecoledirecte-card-header {
             text-align:center;
         }
         div {
@@ -211,16 +211,16 @@ class PronoteDelaysCard extends LitElement {
     }
 
     static getConfigElement() {
-        return document.createElement("pronote-delays-card-editor");
+        return document.createElement("ecoledirecte-delays-card-editor");
     }
 }
 
-customElements.define("pronote-delays-card", PronoteDelaysCard);
+customElements.define("ecoledirecte-delays-card", EcoleDirecteDelaysCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-    type: "pronote-delays-card",
-    name: "Pronote Delays Card",
-    description: "Display the delays from Pronote",
+    type: "ecoledirecte-delays-card",
+    name: "EcoleDirecte Delays Card",
+    description: "Display the delays from EcoleDirecte",
     documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#delays",
 });

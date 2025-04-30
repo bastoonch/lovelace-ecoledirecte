@@ -1,6 +1,6 @@
-# Lovelace cards for the Pronote integration
+# Lovelace cards for the EcoleDirecte integration
 
-A few cards to help display informations from the [Pronote integration for Home Assistant](https://github.com/delphiki/hass-pronote)
+A few cards to help display informations from the [EcoleDirecte integration for Home Assistant](https://github.com/delphiki/hass-pronote)
 
 ## Installation
 
@@ -8,7 +8,7 @@ A few cards to help display informations from the [Pronote integration for Home 
 
 Add this repository to HACS : https://github.com/bastoonch/lovelace-ecoledirecte.git
 then:  
-HACS > Lovelace > **Pronote Cards**
+HACS > Lovelace > **EcoleDirecte Cards**
 
 ## Cards
 
@@ -17,7 +17,7 @@ HACS > Lovelace > **Pronote Cards**
 ![Timetable card example](/doc/images/timetable-card.png "Timetable card example").  
   
 ```yaml
-type: custom:pronote-timetable-card
+type: custom:ecoledirecte-timetable-card
 entity: sensor.pronote_XXXX_YYYY_timetable_next_day
 display_header: true
 display_lunch_break: true
@@ -36,7 +36,7 @@ This card can be used with all timetable sensors.
 ![Homework card example](/doc/images/homework-card.png "Homework card example").
   
 ```yaml
-type: custom:pronote-homework-card
+type: custom:ecoledirecte-homework-card
 entity: sensor.pronote_XXXX_YYYY_homework
 display_header: true
 display_done_homework: true
@@ -51,7 +51,7 @@ This card can be used with all homework sensors.
 ![Grades card example](/doc/images/grades-card.png "Grades card example").
   
 ```yaml
-type: custom:pronote-grades-card
+type: custom:ecoledirecte-grades-card
 entity: sensor.pronote_XXXX_YYYY_grades
 grade_format: full # 'full' will display grade as "X/Y", 'short' will display "X"
 display_header: true
@@ -72,7 +72,7 @@ max_grades: null
 ![Averages card example](/doc/images/averages-card.png "Averages card example").
   
 ```yaml
-type: custom:pronote-averages-card
+type: custom:ecoledirecte-averages-card
 entity: sensor.pronote_XXXX_YYYY_averages
 average_format: full # 'full' will display grade as "X/Y", 'short' will display "X"
 display_header: true
@@ -88,7 +88,7 @@ display_class_max: true
 ![Evaluations card example](/doc/images/evaluations-card.png "Evaluations card example").
   
 ```yaml
-type: custom:pronote-evaluations-card
+type: custom:ecoledirecte-evaluations-card
 entity: sensor.pronote_XXXX_YYYY_evaluations
 display_header: true
 display_description: true
@@ -105,7 +105,7 @@ child_name: null
 ![Absences card example](/doc/images/absences-card.png "Absences card example").
   
 ```yaml
-type: custom:pronote-absences-card
+type: custom:ecoledirecte-absences-card
 entity: sensor.pronote_XXXX_YYYY_absences
 display_header: true
 max_absences: null
@@ -117,7 +117,7 @@ child_name: null
 ![Absences card example](/doc/images/delays-card.png "Delays card example").
   
 ```yaml
-type: custom:pronote-delays-card
+type: custom:ecoledirecte-delays-card
 entity: sensor.pronote_XXXX_YYYY_delays
 display_header: true
 max_delays: null

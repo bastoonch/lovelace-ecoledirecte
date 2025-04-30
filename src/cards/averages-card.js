@@ -4,7 +4,7 @@ const LitElement = Object.getPrototypeOf(
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 
-class PronoteAveragesCard extends LitElement {
+class EcoleDirecteAveragesCard extends LitElement {
 
     static get properties() {
         return {
@@ -17,7 +17,7 @@ class PronoteAveragesCard extends LitElement {
         let child_sensor = this.config.entity.split('_averages')[0];
         let child_attributes = this.hass.states[child_sensor].attributes;
         let child_name = (typeof child_attributes['nickname'] === 'string' && child_attributes['nickname'].length > 0) ? child_attributes['nickname'] : child_attributes['full_name'];
-        return html`<div class="pronote-card-header">Moyennes de ${child_name}</div>`;
+        return html`<div class="ecoledirecte-card-header">Moyennes de ${child_name}</div>`;
     }
 
     getAverageRow(averageData) {
@@ -113,7 +113,7 @@ class PronoteAveragesCard extends LitElement {
 
     static get styles() {
         return css`
-        .pronote-card-header {
+        .ecoledirecte-card-header {
             text-align:center;
         }
         div {
@@ -217,16 +217,16 @@ class PronoteAveragesCard extends LitElement {
     }
 
     static getConfigElement() {
-        return document.createElement("pronote-averages-card-editor");
+        return document.createElement("ecoledirecte-averages-card-editor");
     }
 }
 
-customElements.define("pronote-averages-card", PronoteAveragesCard);
+customElements.define("ecoledirecte-averages-card", EcoleDirecteAveragesCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-    type: "pronote-averages-card",
-    name: "Pronote Averages Card",
-    description: "Display the averages from Pronote",
+    type: "ecoledirecte-averages-card",
+    name: "EcoleDirecte Averages Card",
+    description: "Display the averages from EcoleDirecte",
     documentationURL: "https://github.com/bastoonch/lovelace-ecoledirecte?tab=readme-ov-file#averages",
 });
