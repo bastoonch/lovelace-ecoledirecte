@@ -98,7 +98,7 @@ class BasePronoteCardEditor extends LitElement {
     }
 
     buildEntityPickerField(label, config_key, value, filter) {
-        const entityFilter = new RegExp("pronote_[a-z_]+_"+filter);
+        const entityFilter = new RegExp("ecole_directe_[a-z_]+_"+filter);
 
         return html`
             <ha-entity-picker
