@@ -1,6 +1,9 @@
 # Lovelace cards for the EcoleDirecte integration
 
-A few cards to help display informations from the [EcoleDirecte integration for Home Assistant](https://github.com/delphiki/hass-pronote)
+A few cards to help display informations from the [EcoleDirecte integration for Home Assistant](https://github.com/bastoonch/lovelace-ecoledirecte/) 
+
+It is based on the Pronote Card from delphiki
+https://github.com/delphiki/lovelace-pronote
 
 ## Installation
 
@@ -10,7 +13,32 @@ Add this repository to HACS : https://github.com/bastoonch/lovelace-ecoledirecte
 then:  
 HACS > Lovelace > **EcoleDirecte Cards**
 
-## Cards
+## Working Cards
+
+
+### Grades
+  
+![Grades card example](/doc/images/grades-card.png "Grades card example").
+  
+```yaml
+type: custom:ecoledirecte-grades-card
+entity: sensor.ecoledirecte_XXXX_YYYY_grades
+grade_format: full # 'full' will display grade as "X/Y", 'short' will display "X"
+display_header: true
+display_date: true
+display_comment: true
+display_class_average: true
+compare_with_class_average: true
+compare_with_ratio: null # use a float number, e.g. '0.6' to compare with the grade / out_of ratio
+display_coefficient: true
+display_class_min: true
+display_class_max: true
+display_new_grade_notice: true
+max_grades: null
+```
+
+
+## Not Tested Cards
 
 ### Timetable
   
@@ -45,27 +73,6 @@ current_week_only: false
 ```
 
 This card can be used with all homework sensors.
-
-### Grades
-  
-![Grades card example](/doc/images/grades-card.png "Grades card example").
-  
-```yaml
-type: custom:ecoledirecte-grades-card
-entity: sensor.ecoledirecte_XXXX_YYYY_grades
-grade_format: full # 'full' will display grade as "X/Y", 'short' will display "X"
-display_header: true
-display_date: true
-display_comment: true
-display_class_average: true
-compare_with_class_average: true
-compare_with_ratio: null # use a float number, e.g. '0.6' to compare with the grade / out_of ratio
-display_coefficient: true
-display_class_min: true
-display_class_max: true
-display_new_grade_notice: true
-max_grades: null
-```
 
 ### Averages
   
